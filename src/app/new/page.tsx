@@ -1,16 +1,17 @@
 import React from 'react'
 
 const page = () => {
-  
+
   async  function createToDo(){
 
    'use server'
+
   }
 
   return (
     <>
         <hr/>
-             <form >
+             <form action={createToDo}>
              <div className='border-spacing-6 rounded text-lg'>
               Create New ToDo
              </div>
