@@ -7,7 +7,7 @@ export default function Home() {
             <h1 className='text-2xl'>Todos</h1>
             <Link href='/new'>New</Link>
              </header>
-          <ul>  </ul>     
+          <ul className='pl-4'>  </ul>     
         
         </>
   )
