@@ -14,10 +14,7 @@ type ToDos = {
 };
 
 
-
 const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data||[]
-
-
 
 async function toggle(id:string){
 
