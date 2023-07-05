@@ -19,10 +19,12 @@ const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockap
              </header>
              <hr/>
              <form >
-             <div className='border-spacing-6 rounded'>
+             <div className='border-spacing-6 rounded text-lg'>
               Create New ToDo
              </div>
-             <span className='p-5'>Input : </span><input/>
+             <span className='p-5'>Input : </span>
+             <input className='m-5'/>
+             <button type='submit'>Submit</button>
              </form>
              <hr/>
           <ul className='pl-4'>{
