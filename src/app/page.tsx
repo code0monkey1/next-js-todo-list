@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ToDoCard from '../../components/ToDoCard';
 
 export default function Home() {
 type ToDos = {
@@ -25,7 +26,11 @@ for (let i = 1; i <= 12; i++) {
             <h1 className='text-2xl'>Todos</h1>
             <Link href='/new'>New</Link>
              </header>
-          <ul className='pl-4'>{todos.map(t => <div key={t.id}> <div>{t.content}</div> <span><input type='checkbox' checked={t.checked}/> </span></div>)}  </ul>     
+          <ul className='pl-4'>{
+          todos.map(t => <ToDoCard props={t} />)
+         }  
+         
+         </ul>     
         
         </>
   )
