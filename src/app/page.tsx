@@ -5,6 +5,7 @@ import ToDoCard from '../../components/ToDoCard';
 
 
 export default async function Home() {
+  
 type ToDos = {
   id: string;
   content: string;
