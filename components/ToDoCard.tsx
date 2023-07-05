@@ -6,6 +6,8 @@ type ToDoCardData={
             checked:boolean
 }
 const ToDoCard = (data:ToDoCardData) => {
+   
+
   return (
     <div key={data.id}> 
           <div>{data.content}</div> 

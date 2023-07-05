@@ -27,7 +27,7 @@ for (let i = 1; i <= 12; i++) {
             <Link href='/new'>New</Link>
              </header>
           <ul className='pl-4'>{
-          todos.map(t => <ToDoCard props={t} />)
+          todos.map(t => <ToDoCard key={t.id} {...t} />)
          }  
          
          </ul>     
