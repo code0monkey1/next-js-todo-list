@@ -15,26 +15,17 @@ type ToDos = {
 
 const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data||[]
 
- async  function createToDo(){
-
-   'use server'
-
-}
+ 
 
   return (<>
           <header className='flex justify-between items-center'> 
-            <h1 className='text-2xl'>Todos</h1>
-            <Link href='/new'>New</Link>
+            <h1 className='text-2xl'>Todos</h1>  
              </header>
              <hr/>
-             <form >
-             <div className='border-spacing-6 rounded text-lg'>
+             <Link className='border-spacing-6 rounded text-lg' href='/new'>
               Create New ToDo
-             </div>
-             <span className='p-5'>Input : </span>
-             <input className='m-5' type='text' name='title'/>
-             <button type='submit'>Submit</button>
-             </form>
+             </Link>
+          
              <hr/>
           <ul className='pl-4'>{
           todos.map(t => <ToDoCard   key={t.id} {...t} />)
