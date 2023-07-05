@@ -43,15 +43,18 @@ async function toggle(id:string){
              </header>
              <hr/>
              <Link className='border-spacing-6 rounded text-lg' href='/new'>
+              
               Create New ToDo
+
              </Link>
           
              <hr/>
-          <ul className='pl-4'>{
-          todos.map(t => <ToDoCard   key={t.id} {...t} toggle={toggle} />)
-         }  
-         
-         </ul>     
+
+             <ul className='pl-4'>
+           
+            { todos.map(t => <ToDoCard   key={t.id} {...t} toggle={toggle} />)}  
+            
+             </ul>     
         
         </>
   )
