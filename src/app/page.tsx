@@ -25,7 +25,7 @@ for (let i = 1; i <= 12; i++) {
             <h1 className='text-2xl'>Todos</h1>
             <Link href='/new'>New</Link>
              </header>
-          <ul className='pl-4'>  </ul>     
+          <ul className='pl-4'>{todos.map(t => <div key={t.id}> <div>{t.content}</div> <span><input type='checkbox' checked={t.checked}/> </span></div>)}  </ul>     
         
         </>
   )
