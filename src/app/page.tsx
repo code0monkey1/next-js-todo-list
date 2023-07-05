@@ -23,9 +23,16 @@ async function toggle(id:string){
 
   'use server'
      
- const data:ToDos = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data
+ const data:ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data
 
-  axios.patch(`https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos/${id}`,{...data,checked:!data.checked})
+ let todo:ToDos|undefined = data.find( d => d.id===id)
+
+ if(todo){
+
+   axios.patch(`https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos/${id}`,{...todo,checked:!todo.checked})
+
+ }
+
 
 }
  
