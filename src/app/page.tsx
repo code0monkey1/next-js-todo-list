@@ -2,6 +2,8 @@
 import axios from 'axios';
 import Link from 'next/link';
 import ToDoCard from '../../components/ToDoCard';
+
+
 export default async function Home() {
 type ToDos = {
   id: string;
@@ -9,8 +11,15 @@ type ToDos = {
   checked: boolean;
 };
 
+
+
 const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data||[]
 
+ async  function createToDo(){
+
+   'use server'
+
+}
 
   return (<>
           <header className='flex justify-between items-center'> 
