@@ -1,7 +1,7 @@
+import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import ToDoCard from '../../components/ToDoCard';
-
 export default async function Home() {
 type ToDos = {
   id: string;
@@ -9,7 +9,7 @@ type ToDos = {
   checked: boolean;
 };
 
-const todos: ToDos[] =[]
+const todos: ToDos[] =await (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data||[]
 
 
   return (<>
