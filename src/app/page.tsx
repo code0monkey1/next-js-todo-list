@@ -2,24 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ToDoCard from '../../components/ToDoCard';
 
-export default function Home() {
+export default async function Home() {
 type ToDos = {
   id: string;
   content: string;
   checked: boolean;
 };
 
-const todos: ToDos[] = [];
+const todos: ToDos[] =[]
 
-for (let i = 1; i <= 12; i++) {
-  const todo: ToDos = {
-    checked: true,
-    content: `Todo ${i}`,
-    id: i.toString(),
-  };
-
-  todos.push(todo);
-}
 
   return (<>
           <header className='flex justify-between items-center'> 
