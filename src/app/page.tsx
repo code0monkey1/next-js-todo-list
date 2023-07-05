@@ -23,7 +23,7 @@ const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockap
               Create New ToDo
              </div>
              <span className='p-5'>Input : </span>
-             <input className='m-5'/>
+             <input className='m-5' type='text' name='title'/>
              <button type='submit'>Submit</button>
              </form>
              <hr/>
