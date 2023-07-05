@@ -1,12 +1,22 @@
+import axios from 'axios'
 import React from 'react'
 
-const page = () => {
-
-  async  function createToDo(){
-
+async  function createToDo(data:FormData){
    'use server'
+  
+   const title = data.get('title')
+
+  const newNote = (await axios.post('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos',{
+    content:title,
+    important:true
+  })).data
+
+   console.log(newNote)
 
   }
+const page = () => {
+
+
 
   return (
     <>
