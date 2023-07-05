@@ -4,14 +4,19 @@ interface ITodo extends Document {
   checked: boolean;
   content: string;
   id: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-const TodoSchema: Schema = new Schema({
-  checked: { type: Boolean, default: false },
-  content: { type: String, required: true },
-  id: { type: String, required: true, unique: true },
-});
+const TodoSchema: Schema = new Schema(
+  {
+    checked: { type: Boolean, default: false },
+    content: { type: String, required: true },
+    id: { type: String, required: true, unique: true },
+  },
+  { timestamps: true } // Adds createdAt and updatedAt fields
+);
 
-const TodoModel =mongoose.model<ITodo>('Todo', TodoSchema);
+const TodoModel = mongoose.models.Todo || mongoose.model<ITodo>('Todo', TodoSchema);
 
 export default TodoModel;
