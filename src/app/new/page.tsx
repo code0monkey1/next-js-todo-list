@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 async  function createToDo(data:FormData){
@@ -12,7 +13,8 @@ async  function createToDo(data:FormData){
   })).data
 
    console.log(newNote)
-
+   
+    redirect("/");
   }
 const page = () => {
 
