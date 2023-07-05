@@ -5,6 +5,7 @@ type ToDoCardData={
             id:string,
             content:string,
             checked:boolean
+            toggle:(id:string)=>void
 
 }
 
@@ -16,7 +17,7 @@ const ToDoCard = (data:ToDoCardData) => {
     <div key={data.id}> 
           <div>{data.content}</div> 
           <span>
-            <input  type='checkbox' checked={data.checked}/>
+            <input onChange={()=>data.toggle(data.id)} type='checkbox' checked={data.checked}/>
          </span>
          </div>
   )

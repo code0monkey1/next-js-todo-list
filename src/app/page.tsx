@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import ToDoCard from '../../components/ToDoCard';
 
 
@@ -23,6 +24,8 @@ async function toggle(id:string){
  const data:ToDos = (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data
 
   axios.patch(`https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos/${id}`,{...data,checked:!data.checked})
+
+  redirect('/')
 }
  
 
@@ -37,7 +40,7 @@ async function toggle(id:string){
           
              <hr/>
           <ul className='pl-4'>{
-          todos.map(t => <ToDoCard   key={t.id} {...t} />)
+          todos.map(t => <ToDoCard   key={t.id} {...t} toggle={toggle} />)
          }  
          
          </ul>     
