@@ -11,7 +11,19 @@ type ToDos = {
 
 const todos: ToDos[] =await (await axios.get('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos')).data||[]
 
-
+ 
+const toggleImportance =(id:string)=>{
+   
+    const todo= todos.find( todo => todo.id === id)
+    
+    if(todo){
+      axios.patch('https://641fef8182bea25f6df72478.mockapi.io/api/v1/todos',{...todo,checked:!todo.checked})
+    }
+    else{
+      console.error("Not found")
+    }
+    
+}
   return (<>
           <header className='flex justify-between items-center'> 
             <h1 className='text-2xl'>Todos</h1>
