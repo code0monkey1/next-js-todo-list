@@ -17,6 +17,14 @@ const todos: ToDos[] = (await axios.get('https://641fef8182bea25f6df72478.mockap
             <h1 className='text-2xl'>Todos</h1>
             <Link href='/new'>New</Link>
              </header>
+             <hr/>
+             <form >
+             <div className='border-spacing-6 rounded'>
+              Create New ToDo
+             </div>
+             <span className='p-5'>Input : </span><input/>
+             </form>
+             <hr/>
           <ul className='pl-4'>{
           todos.map(t => <ToDoCard   key={t.id} {...t} />)
          }  
